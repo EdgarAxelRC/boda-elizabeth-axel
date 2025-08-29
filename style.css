@@ -1,0 +1,230 @@
+*{
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Playfair Display', serif;
+}
+
+body {
+    color: white;
+    line-height: 1.6;
+}
+
+/* Secciones generales con parallax */
+.section {
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efecto parallax sutil */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 15px;
+}
+
+.section.cierre {
+    min-height: 50vh; /* Más corta para cierre */
+    background: rgba(0, 0, 0, 0.55); /* Sin foto, solo overlay */
+}
+
+/* Capa semi-transparente */
+.overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Contenido */
+.container {
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    padding: 20px;
+    z-index: 1; /* Sobre el fondo */
+}
+
+/* Animación de entrada */
+.fade-up {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeUp 1.2s ease-out forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delays para secuencia */
+h1 { animation-delay: 0.1s; }
+h2 { animation-delay: 0.2s; }
+.fecha { animation-delay: 0.3s; }
+.lugar { animation-delay: 0.35s; }
+.countdown { animation-delay: 0.4s; }
+button { animation-delay: 0.45s; }
+.mensaje-invitacion { animation-delay: 0.5s; }
+
+/* Estilos texto */
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #fbdcdc;
+}
+
+h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+h4 {
+    font-size: 1.3rem;
+    margin: 10px 0;
+    color: #ffefef;
+}
+
+p, ul {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: #ffefef;
+}
+
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+a {
+    color: #fbdcdc;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fff;
+}
+
+/* Contador */
+.countdown {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.countdown div {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+    min-width: 65px;
+}
+
+.countdown span {
+    display: block;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.countdown small {
+    font-size: 0.8rem;
+    color: #eee;
+}
+
+.mensaje-invitacion {
+    font-size: 1rem;
+    margin-top: 25px;
+    color: #ffefef;
+    font-style: italic;
+    padding: 0 10px;
+}
+
+/*=============================================
+=            ESTILOS PARA EL NUEVO BOTÓN DE MÚSICA           =
+=============================================*/
+.music-button {
+  position: fixed; /* Se queda fijo en la pantalla */
+  top: 15px;
+  right: 15px;
+  background: none;
+  color: #ffefef;
+  border: none;
+  font-size: 1rem;  /* Tamaño del ícono */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;      /* Centra el ícono dentro del botón */
+  justify-content: center;
+  align-items: center;
+  z-index: 100; /* Para que esté por encima de todo */
+  animation-delay: 0.45s;
+  opacity: 0.6s;
+}
+
+.music-button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/*=============================================
+=            ESTILOS PARA EL BOTÓN DE MAPA           =
+=============================================*/
+.map-button {
+    position: fixed;
+    top: 55px; /* Debajo del botón de música */
+    right: 15px;
+    background: none; /* Sin fondo */
+    border: none; /* Sin borde */
+    color: #ffefef; /* Color acorde con el texto */
+    font-size: 1rem; /* Tamaño del ícono */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Transición suave */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    animation-delay: 0.5s; /* Ligeramente después del botón de música */
+    opacity: 0.6; /* Ligeramente transparente para ser sutil */
+}
+
+.map-button:hover {
+    opacity: 1; /* Aumenta opacidad al pasar el ratón */
+    transform: scale(1.1); /* Ligeramente más grande al hover */
+}
+
+/* Video */
+video {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.1rem; }
+    h3 { font-size: 1.4rem; }
+    h4 { font-size: 1.1rem; }
+    p, ul { font-size: 0.9rem; }
+    .countdown { font-size: 1rem; }
+    .countdown span { font-size: 1.4rem; }
+    .music-button { font-size: 0.9rem; top: 10px; right: 10px; }
+    .section { min-height: auto; padding: 40px 10px; }
+}
