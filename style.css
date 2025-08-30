@@ -218,13 +218,18 @@ video {
 
 /* Responsivo */
 @media (max-width: 600px) {
-    h1 { font-size: 1.8rem; }
-    h2 { font-size: 1.1rem; }
-    h3 { font-size: 1.4rem; }
-    h4 { font-size: 1.1rem; }
-    p, ul { font-size: 0.9rem; }
-    .countdown { font-size: 1rem; }
-    .countdown span { font-size: 1.4rem; }
-    .music-button { font-size: 0.9rem; top: 10px; right: 10px; }
-    .section { min-height: auto; padding: 40px 10px; }
+    .container {
+        max-width: 90%;
+        padding: 15px;
+    }
+    .section {
+        background-attachment: scroll; /* Disable parallax on mobile */
+    }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1rem; }
+    h3 { font-size: 1.2rem; }
+    h4 { font-size: 1rem; }
+    p, ul { font-size: 0.85rem; }
+    .countdown { font-size: 0.9rem; }
+    .countdown span { font-size: 1.2rem; }
 }
