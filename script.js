@@ -86,4 +86,16 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("flight-usa").href = `https://www.google.com/flights?hl=es#flt=MIA.HMO.${outboundDate}*HMO.MIA.${returnDate}`;
     document.getElementById("flight-mex").href = `https://www.google.com/flights?hl=es#flt=MEX.HMO.${outboundDate}*HMO.MEX.${returnDate}`;
     document.getElementById("flight-gdl").href = `https://www.google.com/flights?hl=es#flt=GDL.HMO.${outboundDate}*HMO.GDL.${returnDate}`;
+
+    // Logica para el slide
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlide() {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active')
+    }
+
+    setInterval(showSlide, 4000);
 });

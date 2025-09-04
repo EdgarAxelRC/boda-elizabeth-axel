@@ -8,14 +8,15 @@
 body {
     color: white;
     line-height: 1.6;
+    background-image: url('photo1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /* Secciones generales con parallax */
 .section {
     min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Efecto parallax sutil */
     position: relative;
     display: flex;
     align-items: center;
@@ -213,7 +214,61 @@ a:hover {
 video {
     max-width: 100%;
     border-radius: 10px;
-    margin: 20px 0;
+    margin: 20px 0 40px 0;
+}
+
+/* Slider de la galeria */
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 15px;
+    z-index: 2;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 2;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.centroarriba {
+    object-position: center 40%;
+}
+
+.centro {
+    object-position: center center;
+}
+
+.centromedioabajo {
+    object-position: center 60%; 
+}
+
+.centroabajo {
+    object-position: center 70%;
+}
+
+.abajo {
+   object-position: center 80%; 
 }
 
 /* Responsivo */
