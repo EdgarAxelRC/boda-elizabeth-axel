@@ -1,3 +1,6 @@
+// ==============================
+//  ⏳ CountDown
+// ==============================
 const countdown = () => {
     const eventDate = new Date("2026-11-15T00:00:00").getTime();
     const now = new Date().getTime();
@@ -18,6 +21,9 @@ const countdown = () => {
 
 setInterval(countdown, 1000);
 
+// ==============================
+//  🎵 Musica
+// ==============================
 function toggleMusic() {
     const music = document.getElementById("music");
     const icon = document.getElementById("music-icon")
@@ -41,7 +47,9 @@ function toggleMusic() {
     })
 }
 
-// Funcion para abrir el mapa
+// ==============================
+//  📍 Mapa
+// ==============================
 function openMap() {
     const lat = 27.95214;
     const lng = -111.04714;
@@ -60,11 +68,16 @@ function openMap() {
     }
 }
 
-// Ajuste de volumen al cargar y generación de enlaces dinámicos para Google Flights
+// ==============================
+//  🚀 Al cargar DOM
+// ==============================
 document.addEventListener('DOMContentLoaded', () => {
+    // Ajuste de Volumen de musica
     document.getElementById('music').volume = 0.4;
 
-    // Función para generar fechas dinámicas para Google Flights
+    // ==============================
+    //  ✈️ Google Flights
+    // ==============================
     const weddingDate = new Date("2026-11-15T00:00:00");
     const today = new Date();
     const maxBookingDays = 330; // Aproximadamente 11 meses
@@ -87,7 +100,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("flight-mex").href = `https://www.google.com/flights?hl=es#flt=MEX.HMO.${outboundDate}*HMO.MEX.${returnDate}`;
     document.getElementById("flight-gdl").href = `https://www.google.com/flights?hl=es#flt=GDL.HMO.${outboundDate}*HMO.GDL.${returnDate}`;
 
-    // Logica para el slide
+    // ==============================
+    //  🎞️ Slider
+    // ==============================    
     let currentSlide = 0;
     const slides = document.querySelectorAll('.slide');
 
@@ -98,4 +113,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     setInterval(showSlide, 4000);
+
+    // ==============================
+    //  🌄 Fondos dinámicos de secciones
+    // ==============================
+    document.querySelectorAll(".section").forEach((section) => {
+        const bg = section.getAttribute("data-bg");
+        if (bg) {
+            section.style.setProperty("--bg-img", `url(${bg})`);
+        }
+    });
 });
