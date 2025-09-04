@@ -8,15 +8,14 @@
 body {
     color: white;
     line-height: 1.6;
-    background-image: url('photo1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
 }
 
 /* Secciones generales con parallax */
 .section {
     min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     position: relative;
     display: flex;
     align-items: center;
