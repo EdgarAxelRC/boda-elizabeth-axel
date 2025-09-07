@@ -8,32 +8,22 @@
 body {
     color: white;
     line-height: 1.6;
+    background-image: url("photo1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 /* Secciones generales con parallax */
 .section {
-    min-height: 100vh;
     position: relative;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px 15px;
-    overflow: hidden;
-}
-
-/* Capa de fondo fija */
-.section::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: var(--bg-img);
-    background-size: cover;
-    background-position: center;
-    z-index: -2; /* Detras de todo */
-    transform: translateZ(0); /* evita bug en iOS */
+    text-align: center;
+    padding: 3rem 1rem;
 }
 
 .section.cierre {
@@ -49,10 +39,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    position: absolute;
 }
 
 /* Contenido */
